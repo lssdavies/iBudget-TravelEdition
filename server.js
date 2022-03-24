@@ -5,7 +5,8 @@ const compression = require("compression");
 
 //due to an issue with my mongoDB I have to ip address /127.0.0.1 instead of local host
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb:mongodb://localhost/budget";
 
 const app = express();
 
