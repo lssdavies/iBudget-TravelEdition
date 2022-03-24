@@ -5,10 +5,13 @@ const compression = require("compression");
 
 //due to an issue with my mongoDB I have to ip address /127.0.0.1 instead of local host
 const PORT = process.env.PORT || 3001;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1/pizza-hunt", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const MONGODB_URI = mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://127.0.0.1/pizza-hunt",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const app = express();
 
